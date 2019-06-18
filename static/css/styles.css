@@ -186,8 +186,14 @@ hr {
 /**
  * Contain overflow in all browsers.
  */
-pre {
-  overflow: auto; }
+pre > code {
+    overflow: auto;
+    -ms-word-wrap: normal;
+    word-wrap: normal;
+    overflow-wrap: normal;
+    white-space: pre;
+    max-height: 400px;
+}
 
 /**
  * Address odd `em`-unit font size rendering in all browsers.
