@@ -2,6 +2,17 @@
     <main role="main" class="content">
         {{ $paginator := .Paginate (where .Site.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
+		{{ if isset .Params "featuredimage" -}}
+		<div class="card-img-container">
+		  <picture>
+		    {{ if (fileExists (printf "%s/%s" "static" (replace (.Params.featuredimage) (path.Ext .Params.featuredimage) ".webp"))) -}}
+		      <source srcset="{{ replace (.Params.featuredimage) (path.Ext (.Params.featuredimage)) ".webp" | absURL }}" type="image/webp">
+		    {{- end }}
+		    <source srcset="{{ .Params.featuredimage | absURL }}">
+		    <img src="{{.Params.featuredimage | absURL }}" class="card-img" {{ if isset .Params "featuredimagedescription" }}alt="{{.Params.featuredimagedescription}}"{{end}}>
+		  </picture>
+		</div>
+		{{- end }}
             {{ .Render "summary" }}
         {{ end }}
         {{ partial "pagination" . }}
