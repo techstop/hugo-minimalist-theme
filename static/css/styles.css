@@ -500,12 +500,14 @@ hr {
   text-align: center;
   width: 25%;
   float: left;
-  margin: 20px 5% 0px 5%; }
+  margin: 0 0 0 0;
+}
 
 .content {
-  width: 60%;
-  margin-right: 5%;
-  float: right; }
+  width: 65%;
+  margin: auto;
+  padding: 10px;
+}
 
 .site-header {
   background: #2a373d url(../img/header-bg.jpg) no-repeat center center;
