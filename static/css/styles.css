@@ -570,9 +570,9 @@ hr {
   font-weight: 700; }
 
 .post {
-  margin-bottom: 60px;
-  padding-bottom: 60px;
-  border-bottom: 1px solid #ececec; }
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #dbdbdb; }
 
 .post img {
   max-width: 100%;
