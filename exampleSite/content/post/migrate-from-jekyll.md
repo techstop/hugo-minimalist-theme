@@ -1,7 +1,6 @@
 +++
 title = "Migrate from Jekyll"
 date = "2015-10-10T13:07:31+02:00"
-featuredImage = "apple-touch-icon.png"
 tags = ["jekyll", "migration", "hugo"]
 +++
 

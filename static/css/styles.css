@@ -38,18 +38,7 @@ main,
 nav,
 section,
 summary {
-  display: block;
-}
-
-.card-img-container {
-    float: left;
-}
-.card-img {
-    margin: 10px 10px 10px 0;
-    max-height: 10em;
-    max-width: 12em;
-    object-fit: cover;
-}
+  display: block; }
 
 /**
  * 1. Correct `inline-block` display not defined in IE 8/9.
