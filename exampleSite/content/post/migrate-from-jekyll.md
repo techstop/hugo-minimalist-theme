@@ -1,8 +1,11 @@
 +++
 title = "Migrate from Jekyll"
 date = "2015-10-10T13:07:31+02:00"
+url = "/migrate-from-jekyll/"
 tags = ["jekyll", "migration", "hugo"]
 +++
+
+{{<smallimg src="../apple-touch-icon.png" alt="Hugo Logo" smartfloat="left" width="100px">}}
 
 ## Move static content to `static`
 Jekyll has a rule that any directory not starting with `_` will be copied as-is to the `_site` output. Hugo keeps all static content under `static`. You should therefore move it all there.
