@@ -22,6 +22,7 @@ themesDir = "../.."
     header_background = "img/desk.jpg"
     header_title = "Customizable header title"
     copyright = "Powered by [Hugo](http://gohugo.io)."
+	navbar_site_name = "Site Name"
     custom_css = []
     custom_js  = []
 

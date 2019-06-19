@@ -44,3 +44,41 @@
               <h2>{{ .Site.Params.header_title }}</h2>
           </div>
         </header>
+
+	<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<nav class="navbar">
+		<label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
+			<i class="fa fa-bars"></i>
+    	</label>
+		{{- if isset $.Site.Params "navbar_site_name"}}
+			<a href="{{ .Site.BaseURL }}" class="logo">{{ .Site.Params.navbar_site_name }}</a>
+		{{ else }}
+			<spacer></spacer>
+		{{ end -}}
+		<input type="checkbox" id="chkToggle"></input>
+		<ul class="main-nav" id="js-menu">
+			{{- if (not (isset $.Site.Params "navbar_site_name")) }}
+				<li>
+					<br>
+				</li>
+			{{ end -}}
+			<li>
+				<a href="{{ .Site.BaseURL }}" class="nav-links">Home</a>
+			</li>
+			<li>
+				<a href="#" class="nav-links">Products</a>
+			</li>
+			<li>
+				<a href="#" class="nav-links">About Us</a>
+			</li>
+			<li>
+				<a href="#" class="nav-links">Contact Us</a>
+			</li>
+			<li>
+				<a href="#" class="nav-links">Blog</a>
+			</li>
+		</ul>
+	</nav>
+</html>
