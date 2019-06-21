@@ -35,6 +35,21 @@
       background-size: cover;
     }
     </style>
+    <!-- Back to top button - show after 300px scroll -->
+    <script>
+      window.onscroll = function() {scrollFunction()};
+      function scrollFunction() {
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+          document.getElementById("myBtn").style.display = "block";
+        } else {
+          document.getElementById("myBtn").style.display = "none";
+        }
+      }
+      function topFunction() {
+        $(document.documentElement).animate({ scrollTop: 0 }, 'slow');
+        $(document.body).animate({ scrollTop: 0 }, 'slow');
+      }
+    </script>
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -82,5 +97,7 @@
         </li>
       </ul>
     </nav>
+    <!-- Back to top button -->
+    <button onclick="topFunction()" id="myBtn" title="Back to top">&#8682;</button>
   </body>
 </html>
