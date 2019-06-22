@@ -24,6 +24,7 @@ themesDir = "../.."
     copyright = "Powered by [Hugo](http://gohugo.io)."
 	navbar_site_name = "Site Name"
     post_date = true
+    post_tags = true
     custom_css = []
     custom_js  = []
 

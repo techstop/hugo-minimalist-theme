@@ -7,6 +7,16 @@
             {{ partial "article-header" . }}
             {{ .Content}}
             {{ partial "article-share" . }}
+            {{ if $.Site.Params.post_tags }}
+                {{ if isset .Params "tags" }}
+                    {{ if gt (len .Params.tags) 0 }}
+                        {{ .Site.Data.l10n.article.tagged_in }}
+                        {{ range $i, $v := .Params.tags }}
+                            <a href="{{ $.Site.BaseURL }}tags/{{ $v | urlize }}">{{ $v | lower }}</a>{{ if ne (len $.Params.tags) (add $i 1) }}, {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
         </article>
         {{ if .Site.DisqusShortname }}
         <div class="comments">

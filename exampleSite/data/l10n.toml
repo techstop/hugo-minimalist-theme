@@ -5,7 +5,7 @@
     read_more = "Read more"
     back_to_home = "Back to home"
     posted_on = "Posted on"
-    tagged_in = "Tagged in"
+    tagged_in = "Tags:"
 
 [comments]
     comments = "Comments"
