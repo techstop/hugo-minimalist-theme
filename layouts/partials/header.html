@@ -66,14 +66,13 @@
           <h2>{{ .Site.Params.header_title }}</h2>
       </div>
     </header>
-
+    <!-- Navbar -->
     <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <nav class="navbar">
       <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
         <i class="fa fa-bars"></i>
-        </label>
+      </label>
       {{- if isset $.Site.Params "navbar_site_name"}}
         <a href="{{ .Site.BaseURL }}" class="logo">{{ .Site.Params.navbar_site_name }}</a>
       {{ else }}

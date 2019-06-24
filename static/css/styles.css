@@ -845,9 +845,6 @@ body.post-template .site-header h2 .logo {
   color: white;
   font-size: 24px;
 }
-.navbar-toggle:hover {
-  color: rgba(0, 0, 0, 0.5);
-}
 
 #chkToggle {
   display: none;
