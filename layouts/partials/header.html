@@ -97,9 +97,11 @@
         <li>
           <a href="#" class="nav-links">Contact Us</a>
         </li>
-        <li>
-          <a href="#" class="nav-links">Blog</a>
-        </li>
+        {{ if or ( .IsHome ) ( .IsPage ) }}
+          <li>
+            <a href="{{ .Site.BaseURL }}post/" class="nav-links">Search</a>
+          </li>
+        {{ end }}
       </ul>
     </nav>
     <!-- Back to top button -->

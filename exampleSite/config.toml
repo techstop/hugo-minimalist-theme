@@ -43,3 +43,6 @@ themesDir = "../.."
     instagram = ""
     github    = "digitalcraftsman"
     gplus     = ""
+    
+[outputs]
+    section = ["HTML", "RSS", "JSON"]
