@@ -70,7 +70,6 @@ const initLunr = () => {
       builder.pipeline.reset()
       builder.ref('ref')
       builder.field('title', { boost: 10 })
-      builder.field('body')
       builder.metadataWhitelist = ['position']
       for (let page of pagesIndex) {
         builder.add(page)
@@ -142,7 +141,6 @@ const initUI = () => {
 const renderResults = (results) => {
   const $searchResults = $('#searchResults')
   const query = $('#searchBoxInput').val()
-  const BODY_LENGTH = 100
   const MAX_PAGES = 10
 
   // Clear search result
@@ -157,13 +155,8 @@ const renderResults = (results) => {
   // Only show the ten first results
   results.slice(0, MAX_PAGES).forEach((result, idx) => {
     const $searchResultPage = $('<div class="searchResultPage">')
-    const metadata = lunrResult[idx].matchData.metadata
-    const matchPosition = metadata[Object.keys(metadata)[0]].body ? metadata[Object.keys(metadata)[0]].body.position[0][0] : 0
-    const bodyStartPosition = (matchPosition - (BODY_LENGTH / 2) > 0) ? matchPosition - (BODY_LENGTH / 2) : 0
 
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
-
-    $searchResultPage.append('<div class="searchResultBody">' + result.body.substr(bodyStartPosition, BODY_LENGTH) + '</div>')
     $searchResults.append($searchResultPage)
 
     // Highlight keyword
