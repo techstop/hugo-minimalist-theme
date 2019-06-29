@@ -13,10 +13,6 @@
     <script>window.jQuery || document.write('<script src="{{ "js/vendor/jquery-1.11.0.min.js" | absURL }}"><\/script>')</script>
     <script src="{{ "js/plugins.js" | absURL }}"></script>
 
-    {{ range .Site.Params.custom_js }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-    {{ end }}
-
     {{ template "_internal/google_analytics.html" . }}
   </body>
 </html>

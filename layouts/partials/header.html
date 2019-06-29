@@ -13,18 +13,13 @@
     <meta name="author">
     <meta name="description" content="{{ .Site.Params.site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ partial "stylesheets" . }}
     {{ hugo.Generator }}
     <link href="{{ "post/index.xml" | absURL }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
     <link href="{{ "post/index.xml" | absURL }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="{{ "css/styles.css" | absURL }}">
     <link rel="icon" href="{{ "favicon.ico" | absURL }}">
     <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}" />
-    <link rel="stylesheet" href="{{ "css/highlightjs/monokai.css" | absURL }}">
     <script src="{{ "js/vendor/modernizr-2.8.0.min.js" | absURL }}"></script>
-    {{ range .Site.Params.custom_css }}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-    {{ end }}
     <style>
     .site-header h2 .logo {
     background: url({{ .Site.Params.header_background | absURL }}) no-repeat 0 0;
@@ -70,8 +65,6 @@
     </header>
     {{ end }}
     <!-- Navbar -->
-    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <nav class="navbar">
       <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
         <i class="fa fa-bars"></i>
