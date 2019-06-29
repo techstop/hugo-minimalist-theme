@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <label class="navbar-toggle" id="js-navbar-toggle" for="chkToggle">
+    <i class="fa fa-bars"></i>
+  </label>
+  {{- if isset $.Site.Params "navbar_site_name"}}
+    <a href="{{ .Site.BaseURL }}" class="logo">{{ .Site.Params.navbar_site_name }}</a>
+  {{ else }}
+    <spacer></spacer>
+  {{ end -}}
+  <input type="checkbox" id="chkToggle"></input>
+  <ul class="main-nav" id="js-menu">
+    {{- if (not (isset $.Site.Params "navbar_site_name")) }}
+      <li>
+        <br>
+      </li>
+    {{ end -}}
+    <li>
+      <a href="{{ .Site.BaseURL }}" class="nav-links">Home</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">Products</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">About Us</a>
+    </li>
+    <li>
+      <a href="#" class="nav-links">Contact Us</a>
+    </li>
+    {{ if or ( .IsHome ) ( .IsPage ) }}
+      <li>
+        <a href="{{ .Site.BaseURL }}post/" class="nav-links"><button type="submit" style="background: none; border: none; padding: 0;" title="Search"><i class="fa fa-search"></i></button></a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>
