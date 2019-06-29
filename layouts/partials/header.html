@@ -102,7 +102,7 @@
         </li>
         {{ if or ( .IsHome ) ( .IsPage ) }}
           <li>
-            <a href="{{ .Site.BaseURL }}post/" class="nav-links">Search</a>
+            <a href="{{ .Site.BaseURL }}post/" class="nav-links"><button type="submit" style="background: none; border: none; padding: 0;" title="Search"><i class="fa fa-search"></i></button></a>
           </li>
         {{ end }}
       </ul>

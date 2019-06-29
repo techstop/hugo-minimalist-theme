@@ -869,7 +869,7 @@ body.post-template .site-header h2 .logo {
 
   .main-nav {
     display: flex;
-    margin-right: 30px;
+    margin-right: 20px;
     flex-direction: row;
     justify-content: flex-end;
   }
@@ -879,7 +879,7 @@ body.post-template .site-header h2 .logo {
   }
 
   .nav-links {
-    margin-left: 40px;
+    margin-left: 20px;
   }
 
   .logo {
