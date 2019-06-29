@@ -21,10 +21,3 @@
 </div>
 
 {{ partial "footer" . }}
-
-{{ $jquery := resources.Get "js/jquery.min.js" }}
-{{ $mark := resources.Get "js/jquery.mark.es6.min.js" }}
-{{ $lunr := resources.Get "js/lunr.min.js" }}
-{{ $search := resources.Get "js/search.js" }}
-{{ $js := slice $jquery $mark $lunr $search | resources.Concat "bundle.js" | resources.Minify | resources.Fingerprint }}
-<script src="{{ $js.Permalink }}"></script>
