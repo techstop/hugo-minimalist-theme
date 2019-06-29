@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>
-      {{ if .IsHome }}
-        {{ .Site.Title }}
+      {{- if .IsHome -}}
+        {{- .Site.Title -}}
       {{ else }}
-        {{ .Title }} - {{ .Site.Title }}
-      {{ end }}
+        {{- .Title }} - {{ .Site.Title -}}
+      {{- end -}}
     </title>
-    <meta name="author">
+    <meta name="author" content="{{ .Site.Params.site_author }}">
     <meta name="description" content="{{ .Site.Params.site_description }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ partial "stylesheets" . }}
