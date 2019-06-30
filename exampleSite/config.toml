@@ -3,8 +3,6 @@ languageCode = "en-us"
 title = "John Doe's blog"
 # Define how many pages appear per site
 paginate = 10
-# Enable comments powered by Disqus by entering your disqus shortname
-disqusShortname = "spf13"
 # Enable gogle analytics by entering your tracking code
 googleAnalytics = ""
 theme = "hugo-minimalist-theme"
@@ -25,6 +23,12 @@ themesDir = "../.."
 	  navbar_site_name = "Site Name"
     post_date = true
     post_tags = true
+    
+    # Remove or leave empty to remove comments. Add "comments = false" to post front matter to disable on individual posts.
+    comments = "techstop/hugo-minimalist-theme"
+    # Remove or leave empty defaulst to "github-light". Other themes: github-dark, github-dark-orange, icy-dark, dark-blue, photon-dark
+    comments_theme = "github-light"
+    
     custom_css = []
     custom_js  = []
 

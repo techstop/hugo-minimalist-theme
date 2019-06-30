@@ -18,11 +18,8 @@
                 {{ end }}
             {{ end }}
         </article>
-        {{ if .Site.DisqusShortname }}
-        <div class="comments">
-            <h3>{{ .Site.Data.l10n.comments.comments }}</h3>
-            {{ template "_internal/disqus.html" . }}
-        </div>
+        {{ with .Site.Params.comments }}
+          {{ partial "comments.html" . }}
         {{ end }}
     </main>
     <!-- {{ partial "author" . }} -->
