@@ -1,13 +1,5 @@
 {{ partial "header" . }}
 
-<!-- search box -->
-<div id="searchBox">
-  <input type="text" id="searchBoxInput" placeholder="Search..." />
-  <img id="searchBoxIcon" src="{{ .Site.BaseURL }}img/search.png" />
-</div>
-<!-- search results -->
-<div id="searchResults"></div>
-
 <div class="container clearfix">
     <main role="main" class="content">
         <a class="btn home" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>

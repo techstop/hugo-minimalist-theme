@@ -70,6 +70,8 @@ const initLunr = () => {
       builder.pipeline.reset()
       builder.ref('ref')
       builder.field('title', { boost: 10 })
+      builder.field('tags', { boost: 6 })
+      builder.field('cats', { boost: 4 })
       builder.metadataWhitelist = ['position']
       for (let page of pagesIndex) {
         builder.add(page)
@@ -157,6 +159,16 @@ const renderResults = (results) => {
     const $searchResultPage = $('<div class="searchResultPage">')
 
     $searchResultPage.append('<a class="searchResultTitle" href="' + result.ref + '">' + result.title + '</a>')
+    
+    if (result.cats != null) {
+      $searchResultPage.append('<div class="searchResultBody">' + 'Categories: ' + result.cats + '</div>')
+    }    
+    
+    if (result.tags != null) {
+      $searchResultPage.append('<div class="searchResultBody">' + 'Tags: ' + result.tags + '</div>')
+    }
+    
+    $searchResultPage.append('<hr>')
     $searchResults.append($searchResultPage)
 
     // Highlight keyword

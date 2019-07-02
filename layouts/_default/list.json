@@ -1,6 +1,0 @@
-[{{ range $index, $page := .Pages }}{{ if ne $index 0 }},{{ end }}
-    {
-        "ref": "{{ $page.Permalink }}",
-        "title": {{ $page.Title | jsonify }}
-    }
-{{ end }}]
