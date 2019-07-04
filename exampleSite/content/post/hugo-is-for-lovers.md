@@ -15,7 +15,7 @@ More complete instructions are available at [installing hugo](/overview/installi
 
 <!--more-->
 
-{{< cta-button "Download Hugo" "https://github.com/gohugoio/hugo/releases" >}}
+{{< cta-button "Download Hugo" "https://github.com/gohugoio/hugo/releases" "_blank">}}
 
 ## Step 2. Build the Docs
 

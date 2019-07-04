@@ -1,28 +1,24 @@
 {{ partial "header" . }}
 
 <div class="container clearfix">
-    <main role="main" class="content">
-        <article class="post">
-            <a class="btn home" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
-            {{ partial "article-header" . }}
-            {{ .Content}}
-            {{ partial "article-share" . }}
-            {{ if $.Site.Params.post_tags }}
-                {{ if isset .Params "tags" }}
-                    {{ if gt (len .Params.tags) 0 }}
-                        {{ .Site.Data.l10n.article.tagged_in }}
-                        {{ range $i, $v := .Params.tags }}
-                            <a href="{{ $.Site.BaseURL }}tags/{{ $v | urlize }}">{{ $v | lower }}</a>{{ if ne (len $.Params.tags) (add $i 1) }}, {{ end }}
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
-            {{ end }}
-        </article>
-        {{ with .Site.Params.comments }}
-          {{ partial "comments.html" . }}
+  <main role="main" class="content">
+    <article class="post">
+      <a class="btn home" href="{{ .Site.BaseURL }}" title="{{ .Site.Data.l10n.article.back_to_home }}">&laquo; {{ .Site.Data.l10n.article.back_to_home }}</a>
+      {{ partial "article-header" . }}
+      {{ .Content}}
+      {{ partial "article-share" . }}
+      {{ with and (.Site.Params.post_tags) (.Params.tags) }}
+        {{ $.Site.Data.l10n.article.tagged_in }}
+        {{ range $i, $v := $.Params.tags }}
+          <a href="{{ $.Site.BaseURL }}tags/{{ $v | urlize }}">{{ $v | lower }}</a>{{ if ne (len $.Params.tags) (add $i 1) }}, {{ end }}
         {{ end }}
-    </main>
-    <!-- {{ partial "author" . }} -->
+      {{ end }}
+    </article>
+    {{ with .Site.Params.comments }}
+      {{ partial "comments" . }}
+    {{ end }}
+  </main>
+  <!-- {{ partial "author" . }} -->
 </div>
 
 {{ partial "footer" . }}

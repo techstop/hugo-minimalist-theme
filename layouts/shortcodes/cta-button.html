@@ -1,21 +1,25 @@
 <style>
   #cta-btn {
     background-color: DodgerBlue;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
     margin-top: 16px;
     margin-bottom: 16px;
-    border: none;
+    border: solid 1px rgb(25, 132, 240);
     padding: 8px 20px;
     cursor: pointer;
     color: white;
   }
 
   #cta-btn:hover {
+    border-color: rgb(47, 88, 209);
     background-color: RoyalBlue;
   }
 </style>
 
 <div>
-  <a href="{{.Get 1}}" target="_blank">
+  <a title="{{.Get 0}}" href="{{.Get 1}}" target="{{.Get 2}}">
   <button id="cta-btn"><i class="fa fa-download"></i> {{.Get 0}}</button>
   </a>
 </div>
